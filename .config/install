@@ -1,0 +1,8 @@
+#!/bin/sh
+brew install yabai
+brew install koekeishiya/formulae/skhd
+brew services start skhd
+touch ~./skhdrc
+
+defaults write .GlobalPreferences com.apple.mouse.scaling -1
+

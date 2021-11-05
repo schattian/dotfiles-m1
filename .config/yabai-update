@@ -1,0 +1,8 @@
+export YABAI_CERT=yabai-cert
+brew services stop yabai
+brew reinstall xorpse/formulae/yabai
+codesign -fs "${YABAI_CERT:-yabai-cert}" "$(brew --prefix yabai)/bin/yabai"
+yabai --uninstall-sa
+yabai --install-sa
+brew services start yabai
+
